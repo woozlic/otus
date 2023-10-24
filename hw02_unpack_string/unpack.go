@@ -9,7 +9,7 @@ import (
 var ErrInvalidString = errors.New("invalid string")
 
 func getRune(s string, index int) int32 {
-	for i, cur := range s {
+	for i, cur := range []rune(s) {
 		if i == index {
 			return cur
 		}
@@ -19,7 +19,7 @@ func getRune(s string, index int) int32 {
 
 func Unpack(s string) (string, error) {
 	var b strings.Builder
-	for i, cur := range s {
+	for i, cur := range []rune(s) {
 		var next int32
 		var curIsNum, nextIsNum bool
 		if i < len(s)-1 {
