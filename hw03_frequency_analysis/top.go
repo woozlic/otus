@@ -20,17 +20,18 @@ func Top10(s string) []string {
 		}
 	}
 
-	keys := make([]string, len(top))
+	keys := make([]string, 0)
 	for key := range top {
 		keys = append(keys, key)
 	}
 
 	sort.SliceStable(keys, func(i, j int) bool {
-		if top[keys[i]] > top[keys[j]] {
+		switch {
+		case top[keys[i]] > top[keys[j]]:
 			return true
-		} else if top[keys[i]] == top[keys[j]] {
+		case top[keys[i]] == top[keys[j]]:
 			return keys[i] < keys[j]
-		} else {
+		default:
 			return false
 		}
 	})

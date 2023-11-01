@@ -1,8 +1,9 @@
 package hw03frequencyanalysis
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 // Change to true if needed.
@@ -42,9 +43,10 @@ var text = `Как видите, он  спускается  по  лестни�
 	посидеть у огня и послушать какую-нибудь интересную сказку.
 		В этот вечер...`
 
-var baseText = `cat and dog, one dog,two cats and one man`
-var russianText = `В четверг четвёртого числа в четыре с четвертью часа лигурийский 
-регулировщик регулировал в Лигурии,`
+var (
+	baseText    = "cat and dog, one dog,two cats and one man"
+	russianText = "В четверг четвёртого числа в четыре с четвертью часа лигурийский регулировщик регулировал в Лигурии,"
+)
 
 func TestTop10(t *testing.T) {
 	t.Run("no words in empty string", func(t *testing.T) {
