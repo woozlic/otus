@@ -12,12 +12,7 @@ func Top10(s string) []string {
 		if w == "" {
 			continue
 		}
-		_, ok := top[w]
-		if !ok {
-			top[w] = 1
-		} else {
-			top[w]++
-		}
+		top[w]++
 	}
 
 	keys := make([]string, 0)
